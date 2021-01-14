@@ -10,3 +10,4 @@
 | [runood](www.runood.com) | [cctv](https://www.cctv.com/) | [Jumo](https://www.jiumodiary.com/) |
 | [WXdev](https://mp.weixin.qq.com/) | [NOKIA](https://zzkia.noddl.me/) | [Wikihow](https://zh.wikihow.com/首页) |
 | em | em | [Remove](https://www.remove.bg/zh) |
+| em | em | [CNcolor](http://zhongguose.com/) |
