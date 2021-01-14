@@ -5,7 +5,7 @@
 
 | Learn | Entertain | Tool |
 | -----| :----: | :----: |
-| [Blbl](https://www.bilibili.com) | [Blbl](https://www.bilibili.com) | [CQUPT](www.cqupt.edu.cn) |
+| [Blbl](https://www.bilibili.com) | [Blbl](https://www.bilibili.com) | [CQUPT](https://www.cqupt.edu.cn) |
 | [Github](https://www.github.com) | [jpm](https://m.dushu.com/showbook/100989/) | [jwzx](http://jwc.cqupt.edu.cn/) |
 | [runood](https://www.runood.com) | [cctv](https://www.cctv.com/) | [Jumo](https://www.jiumodiary.com/) |
 | [WXdev](https://mp.weixin.qq.com/) | [NOKIA](https://zzkia.noddl.me/) | [Wikihow](https://zh.wikihow.com/首页) |
