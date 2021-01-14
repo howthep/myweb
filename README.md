@@ -1,2 +1,3 @@
 # myweb
-[main_page]<https://howthep.github.io/myweb/main.html>
+- main_page 
+<https://howthep.github.io/myweb/main.html>
