@@ -10,5 +10,5 @@
 | [runood](https://www.runood.com) | [cctv](https://www.cctv.com/) | [Jumo](https://www.jiumodiary.com/) |
 | [WXdev](https://mp.weixin.qq.com/) | [NOKIA](https://zzkia.noddl.me/) | [Wikihow](https://zh.wikihow.com/首页) |
 | [Marx](https://www.marxists.org/chinese/marx/capital/01.htm) | em | [Remove](https://www.remove.bg/zh) |
-| em | em | [CNcolor](http://zhongguose.com/) |
-| em | em | [Library](http://ydtsg.cqupt.edu.cn:8089/sms/opac/search/showiphoneSearch.action?wxProductId=716&openid=oCTV_1KrCkhDkAFMnMO1pxu-0gCw) |
+| emm | emm | [CNcolor](http://zhongguose.com/) |
+| emm | emm | [Library](http://ydtsg.cqupt.edu.cn:8089/sms/opac/search/showiphoneSearch.action?wxProductId=716&openid=oCTV_1KrCkhDkAFMnMO1pxu-0gCw) |
