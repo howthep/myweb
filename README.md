@@ -12,4 +12,5 @@
 | [Marx](https://www.marxists.org/chinese/marx/capital/01.htm) | em | [Remove](https://www.remove.bg/zh) |
 | em | em | [CNcolor](http://zhongguose.com/) |
 | em | em | [Library](http://ydtsg.cqupt.edu.cn:8089/sms/opac/search/showiphoneSearch.action?wxProductId=716&openid=oCTV_1KrCkhDkAFMnMO1pxu-0gCw) |
+
 <img src="001/image/duck.png" width="50%">
