@@ -1,7 +1,6 @@
 /* dark mode */
 body {margin: 5%;
-background-color:#222222 ;
-color:white;
+
 background-image: url('https://7n.w3cschool.cn/statics/images/logonew2.png');
 background-repeat: no-repeat;
 background-attachment: fixed ;
@@ -11,6 +10,13 @@ background-size: 30%;
 /* body {background:#ffffff url('img_tree.png') no-repeat right top;} */
 /* sort as order above can simplify code */
 
+/* auto judge dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        background: black;
+        color: white;
+    }
+}
 h1 {color: wheat;}
 
 /* use id */
@@ -22,5 +28,5 @@ h1 {color: wheat;}
 .center
 {
     text-align: center;
-    font-size: 14px;
+    font-size: 15px;
 }
