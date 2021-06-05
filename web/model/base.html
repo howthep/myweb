@@ -2,103 +2,85 @@
 <html>
 <head>
 <style>
-* {
-  box-sizing: border-box;
-}
 
-body {
-  margin: 0;
-}
-
-.topmenu{
-    background-color: #555;
-    width: 100%;
+ul{
     list-style-type: none;
-    overflow: hidden;
+    margin: 1%;
     padding: 0;
 }
-
-.topmenu li{
-    float: left;
-}
-
-.topmenu li a{
-    text-decoration: none;
-    color: white;
+ul.linemenu{
     display: inline-block;
-    padding: 1em;
-}
-.topmenu li a:hover{
-    background-color: white;
-    color: black;
+    overflow: hidden;
 }
 
-.listmenu{
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-
-.listmenu li a{
-    text-decoration: none;
-    color: #555;
-    background-color: #eee;
+ul.listmenu{
+    width: 8%;
     display: block;
-    padding: 8px;
-    margin-bottom: 4px;
-}
-.listmenu li a:hover{
-    background-color: #555;
-    color: #fff;
-}
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
 }
 
-.column{
+ul.linemenu li{
     float: left;
-    padding: 15px;
+    border-right: 2px solid white;
 }
 
-.list{
-    width: 25%;
+li a {
+    padding: 10px;
+    display: block;
+    color: #000;
+    text-decoration: none;
+    background-color: #eee;
 }
-.content{
-    width: 75%;
+li a:hover:not(.active){
+    color: #333;
+    background-color: #fff;
+}
+
+.active{
+    color: white;
+    background-color: tomato;
+}
+
+.dropcontent{
+    display: none;
+    position: absolute;
+}
+
+.drop:hover .dropcontent{
+    display: block;
+
 }
 </style>
 </head>
 <body>
 
-<ul class="topmenu" >
-    <li><a href="#">home</a></li>
-    <li><a href="#">news</a></li>
-    <li><a href="#">contact</a></li>
-    <li><a href="#">about</a></li>
+    <ul class="linemenu">
+        <li><a href="#" class="active">Home</a></li>
+        <li class="drop">
+            <a href="#">Article</a>
+            <div class="dropcontent">
+                <a href="#">Life</a>
+                <a href="#">Study</a>
+                <a href="#">Idea</a>
+            </div>
+        </li>
+        <li class="drop"><a href="#">Product</a>
+            <div class="dropcontent">
+                <a href="#">E-toy</a>
+                <a href="#">Tool</a>
+                <a href="#">Software</a>
+            </div>
+        </li>
+        <li><a href="#">Goal</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Search</a></li>
+    </ul>
+<ul class="listmenu">
+    <li><a href="#" class="active">which</a></li>
+    <li><a href="#">whose</a></li>
+    <li><a href="#">whom</a></li>
+    <li><a href="#">where</a></li>
+    <li><a href="#">what</a></li>
 </ul>
-
-<div class="clearfix">
-
-    <div class="column list" >
-        <ul class="listmenu" >
-            <li><a href="#">ome</a></li>
-            <li><a href="#">ews</a></li>
-            <li><a href="#">ontact</a></li>
-            <li><a href="#">bout</a></li>
-            <li><a href="#">tout</a></li>
-            <li><a href="#">somt</a></li>
-        </ul>
-
-    </div>
-    <div class="column content">
-        <h1 style="text-align: center; background-color: aqua; padding: 30px;" >city</h1>
-        <p>passage</p>
-    </div>
-
-</div>
 
 </body>
 </html>
