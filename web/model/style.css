@@ -1,0 +1,79 @@
+
+    * {
+  box-sizing: border-box;
+}
+
+body{
+    background-image: url(./g1786.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom right;
+    background-size: 2vw;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+ul.linemenu{
+    overflow: hidden;
+    background-color: black;
+}
+
+ul.listmenu{
+    width: 8em;
+    display: block;
+}
+
+ul.linemenu li{
+    float: left;
+    border-right: 1px solid white;
+}
+
+li a {
+    padding: 10px;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    background-color: black;
+}
+li a:hover:not(.active){
+    color: #333;
+    background-color: #fff;
+}
+
+.active{
+    color: white;
+    background-color: tomato;
+}
+
+.dropcontent{
+    display: none;
+    position: absolute;
+    box-shadow:  0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.drop:hover .dropcontent{
+    display: block;
+
+}
+
+.column{
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+.main{
+    width: 40%;
+}
+.row::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}

@@ -2,65 +2,10 @@
 <html>
 <head>
     <title>H</title>
-<style>
-body{
-    background-image: url(./g1786.png);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: bottom right;
-    background-size: 2vw;
-}
-ul{
-    list-style-type: none;
-    margin: 1%;
-    padding: 0;
-}
-ul.linemenu{
-    display: inline-block;
-    overflow: hidden;
-}
-
-ul.listmenu{
-    width: 8em;
-    display: block;
-}
-
-ul.linemenu li{
-    float: left;
-    border-right: 2px solid white;
-}
-
-li a {
-    padding: 10px;
-    display: block;
-    color: #000;
-    text-decoration: none;
-    background-color: #eee;
-}
-li a:hover:not(.active){
-    color: #333;
-    background-color: #fff;
-}
-
-.active{
-    color: white;
-    background-color: tomato;
-}
-
-.dropcontent{
-    display: none;
-    position: absolute;
-    box-shadow:  0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-.drop:hover .dropcontent{
-    display: block;
-
-}
-</style>
+    <link rel="stylesheet" href="./style.css" type="text/css">
 </head>
 <body>
-
+    <h1 style="text-align: center;font-size: 4em;" >Welcome!</h1>
     <ul class="linemenu">
         <li><a href="#" class="active">Home</a></li>
         <li class="drop">
@@ -82,14 +27,38 @@ li a:hover:not(.active){
         <li><a href="#">About</a></li>
         <li><a href="#">Search</a></li>
     </ul>
-<ul class="listmenu">
-    <li><a href="#" class="active">which</a></li>
-    <li><a href="#">whose</a></li>
-    <li><a href="#">whom</a></li>
-    <li><a href="#">where</a></li>
-    <li><a href="#">what</a></li>
-</ul>
+    <div class="row">
+        <div class="column">
 
+            <h2>column1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies,
+                 eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat,
+                  purus leo tincidunt eros, eget luctus quam orci in velit. 
+                  Praesent scelerisque tortor sed accumsan convallis.</p>
+        </div>
+        <div class="column main">
 
+            <h2>columnsecond</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies,
+                 eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat,
+                  purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.
+                bonjour comment ca va je m'appelle houzhipeng j'habite a linyi province shandong en chine 
+                </p>
+        </div>
+        <div class="column">
+
+            <h2>columntrois</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies,
+                 eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat,
+                  purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+        </div>
+    </div>
+    <div class="foot">
+        <p style="text-transform: capitalize;text-align: center;">the end</p>
+        <hr>
+    </div>
 </body>
 </html>
