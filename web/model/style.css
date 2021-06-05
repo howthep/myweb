@@ -58,13 +58,18 @@ li a:hover:not(.active){
 
 }
 
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 .column{
-    float: left;
     width: 25%;
     padding: 10px;
 }
 .main{
-    width: 40%;
+    width: 50%;
 }
 .row::after{
     content: "";
