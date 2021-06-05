@@ -7,12 +7,15 @@
     </head>
     <body>
       <h1>headline!</h1>
+    
+      <p class="border"  style="position: sticky; top: 2%; width: 15%;" >sticky position</p>
       <p id="para1" >hello&nbsp;world this a web page for me to learn css the paragraph has text indent  </p>
       <p class="center" >hello&nbsp;world </p>
       <p class="center" >hello&nbsp;world</p>
-      <p class="border" >hello&nbsp;world</p>
+      <p class="border"  onclick="show()" >hello&nbsp;world</p>
+      <p class="border"  style="position: fixed;bottom: 2%;right: 2%;width: 15%;" >fixed position</p>
       <a href="adads" >link</a>
-      <div style="overflow-x: auto;" >
+      <div style="overflow-x: auto;display: none;padding-bottom: 200px;"  id="table" >
         <table>
           <th>h1</th>
           <th>h2</th>
@@ -35,5 +38,16 @@
           </tr>
         </table>
       </div>
+
+      <script>
+        function show(){
+          var show = document.getElementById("table").style.display;
+          if(show == 'none')
+            document.getElementById("table").style.display = "block";
+          else
+            document.getElementById("table").style.display = "none";
+        }
+      </script>
+
     </body>
 </html>

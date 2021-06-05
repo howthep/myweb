@@ -1,16 +1,17 @@
 /* dark mode */
-body {margin: 0;
+body {margin: 0 auto;
     padding: 0;
 
-    background-image: linear-gradient(135deg,#2c3e50,#27ae60,#2980b9,#e74c3c,#8e44ad);
+    /* background-image: linear-gradient(135deg,#2c3e50,#27ae60,#2980b9,#e74c3c,#8e44ad);
     background-size: 400%;
-    animation: bganimation 15s infinite ;
-/* background-image: url('https://7n.w3cschool.cn/statics/images/logonew2.png');
+    animation: bganimation 15s infinite ; */
+background-image: url('https://7n.w3cschool.cn/statics/images/logonew2.png');
 background-repeat: no-repeat;
 background-attachment: fixed ;
 background-position: right  top;
-background-size: 30%; */
+background-size: 30%;
 }
+/* 
 @keyframes bganimation {
     0%{
         background-position: 0% 50%;
@@ -22,7 +23,7 @@ background-size: 30%; */
         background-position: 0% 50%;
     }
     
-}
+} */
 /* body {background:#ffffff url('img_tree.png') no-repeat right top;} */
 /* sort as order above can simplify code */
 
@@ -34,6 +35,9 @@ background-size: 30%; */
     }
 }
 */
+
+
+
 h1 {color: wheat;
     font-size: 8em;
 }
@@ -41,8 +45,11 @@ p{
     text-shadow: 0.5px 0.5px 0.5px white;
     /* font-size: 2vw; */
     font-size: 2em; 
+    line-height: 1em;
     /* use em can be adjust by browser 1em is 1 basic size */
 }
+
+
 
 table{
     width: 80%;
@@ -102,7 +109,7 @@ a:active{
 
 .border{
     background-color: lightcoral;
-    border-left: 3px solid red ;
+    border-left: 0.3em solid red ;
     padding: 1%;   
     color: #000;
     width: 80%;
