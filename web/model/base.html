@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.topmenu{
+    background-color: #555;
+    width: 100%;
+    list-style-type: none;
+    overflow: hidden;
+    padding: 0;
+}
+
+.topmenu li{
+    float: left;
+}
+
+.topmenu li a{
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    padding: 1em;
+}
+.topmenu li a:hover{
+    background-color: white;
+    color: black;
+}
+
+.listmenu{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.listmenu li a{
+    text-decoration: none;
+    color: #555;
+    background-color: #eee;
+    display: block;
+    padding: 8px;
+    margin-bottom: 4px;
+}
+.listmenu li a:hover{
+    background-color: #555;
+    color: #fff;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.column{
+    float: left;
+    padding: 15px;
+}
+
+.list{
+    width: 25%;
+}
+.content{
+    width: 75%;
+}
+</style>
+</head>
+<body>
+
+<ul class="topmenu" >
+    <li><a href="#">home</a></li>
+    <li><a href="#">news</a></li>
+    <li><a href="#">contact</a></li>
+    <li><a href="#">about</a></li>
+</ul>
+
+<div class="clearfix">
+
+    <div class="column list" >
+        <ul class="listmenu" >
+            <li><a href="#">ome</a></li>
+            <li><a href="#">ews</a></li>
+            <li><a href="#">ontact</a></li>
+            <li><a href="#">bout</a></li>
+            <li><a href="#">tout</a></li>
+            <li><a href="#">somt</a></li>
+        </ul>
+
+    </div>
+    <div class="column content">
+        <h1 style="text-align: center; background-color: aqua; padding: 30px;" >city</h1>
+        <p>passage</p>
+    </div>
+
+</div>
+
+</body>
+</html>
