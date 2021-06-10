@@ -11,5 +11,5 @@
 | [WXdev](https://mp.weixin.qq.com/) | [NOKIA](https://zzkia.noddl.me/) | [Wikihow](https://zh.wikihow.com/首页) |
 | [Marx](https://www.marxists.org/chinese/marx/capital/01.htm) | em | [Remove](https://www.remove.bg/zh) |
 | [OSHDhub](https://oshwhub.com/) | em | [CNcolor](http://zhongguose.com/) |
-| [W3C](https://www.w3school.com.cn) | em | [Library](http://ydtsg.cqupt.edu.cn:8089/sms/opac/search/showiphoneSearch.action?wxProductId=716&openid=oCTV_1KrCkhDkAFMnMO1pxu-0gCw) |
+| [W3C](https://www.w3school.com.cn) | em | [Library](http://202.202.43.84/opac/search.php) |
 
