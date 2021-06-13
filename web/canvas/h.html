@@ -2,9 +2,21 @@
 <html>
     <head>
         <style>
+            *{
+                box-sizing: border-box;
+            }
             body{
                 margin:0;
                 padding: 0;
+            }
+            div{
+                padding-left: 8px;
+            }
+            q:lang(div){
+                quotes: "~~" "~~";
+            }
+            #switch{
+                margin-left: 10px;
             }
         </style>
         <meta charset="UTF-8">
@@ -12,10 +24,10 @@
     </head>
     <body>
         <canvas id="cvs" width="1280" height="720" style="border:1px solid" >not support</canvas>
-        <button  id="switch" style="display: block;">Switch Mode</button>
         <div id="Cord">
-            <p>KeyMode:use arrow key to control ///// MouseMode:use mouse to lure</p>
-            <p><kbd>Space</kbd> can switch Mode</p>
+            <p>KeyMode:use arrow key to control  <q lang="div">MouseMode:use mouse to lure</q>  <button>Space</button> can switch Mode
+                <button  id="switch">Switch Mode</button>
+            </p>
         </div>
         <script src="./header.js"></script>
         <script src="./canvas.js"></script>

@@ -10,7 +10,8 @@ var context = cvs.getContext("2d");
 var eventFlag = false;
 var key_pressed = {};
 var v_temp = new Vector2(0,0);
-var destination = new Vector2();
+var circle = new Sprite(WindowWidth/2, WindowHeight/2,30)
+var destination = new Vector2(circle.x,circle.y);
 var last_e = new Vector2();
 var sum_e = new Vector2();
 var Mode = false;
@@ -20,7 +21,6 @@ var score = 0;
 // TODO: vector2 needs to optimize
 cvs.setAttribute("width",WindowWidth-2);
 cvs.setAttribute("height",WindowHeight);
-var circle = new Sprite(WindowWidth/2, WindowHeight/2,30)
 
 var wal = new Wall(1000,0,50,WindowHeight*Math.random());
 
