@@ -18,7 +18,7 @@ var score = 0;
 
 // TODO: when colliding, v equals zero or brouce back
 // TODO: vector2 needs to optimize
-cvs.setAttribute("width",WindowWidth);
+cvs.setAttribute("width",WindowWidth-2);
 cvs.setAttribute("height",WindowHeight);
 var circle = new Sprite(WindowWidth/2, WindowHeight/2,30)
 
