@@ -12,7 +12,7 @@ context.fillRect(0, 0, 50, 50);
 
 function imgCreate(x,y,w,h){
     var img = context.createImageData(w, h);   
-    gradient(img,155,200)
+    gradient(img,0,255)
     context.putImageData(img, x, y);
 }
 
