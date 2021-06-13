@@ -19,6 +19,8 @@ var sum_e = new Vector2();
 var Mode = false;
 var score = 0;
 var Death = false;
+var in_empty=false;
+var top_score=0;
 
 // TODO: when colliding, v equals zero or brouce back
 // TODO: vector2 needs to optimize
@@ -45,6 +47,7 @@ document.onkeyup = function (e) {
     }
     if (e.code == 'KeyR') {
         Death = false;
+        restart();
         console.log("restart")
         return;
     }
@@ -76,20 +79,30 @@ context.font = '30px sans-serif';
 
 
 function main() {
-    
-    if (isCollision()) {
-        Death = true;
-        var str ='Game Over!';
-        var font_size = WindowWidth/10*1.6;
-        context.fillStyle='#aaa';
-        context.textAlign='center';
-        context.font= font_size + 'px sans-serif';
-        context.fillText(str,(WindowWidth)/2,WindowHeight*2/3)
-        context.fillStyle='#000';
-    }
-    else {
-        move();
-        render();
+    if(!Death){
+
+        if (isCollision()) {
+            
+            Death = true;
+            var str ='Game Over!';
+            var font_size = WindowWidth/10*1.6;
+            top_score=top_score>score?top_score:score;
+            context.textAlign='center';
+            context.fillStyle='#999';
+            
+            context.fillText("highest:"+top_score, WindowWidth/2, WindowHeight/3);
+                        
+            context.fillStyle='#aaa';
+            context.font= font_size + 'px sans-serif';
+            context.fillText(str,(WindowWidth)/2,WindowHeight*2/3)
+            context.font= '100px sans-serif';
+            context.fillStyle='#000';
+            context.fillText('Press R to restart',(WindowWidth)/2,WindowHeight-50)
+        }
+        else {
+            move();
+            render();
+        }
     }
 }
 
@@ -100,6 +113,7 @@ function move() {
     else
         keyToMove();
     // to move
+    
     context.clearRect(0, 0, WindowWidth, WindowHeight);
     circle.x += circle.v.x * FrameTime;
     circle.y += circle.v.y * FrameTime;
@@ -115,7 +129,7 @@ function render() {
         var wal = walls[i];
         drawWall(WindowHeight, wal);
         // if(walls.length < wallsMaxLength)
-            wal.x -= wallSpeed;
+            wal.x -= wallSpeed+Math.round(score/200);
 
             if (wal.x < -wal.w) {
                 wal.randomize();
@@ -145,6 +159,11 @@ function render() {
 
 function isCollision() {
     // get nearest wall
+    
+    if(walls.length <2){
+        return false
+    }
+
     var near_wal = walls[0];
     var index = 1;
     var near_dist = getDistanceWalAndCircle(near_wal,circle);
@@ -158,10 +177,21 @@ function isCollision() {
             near_dist = dist;
         }
     }
+    if(in_empty){
+        if(near_dist>0)
+        {
+            in_empty = false;
+            if (Mode)
+            score+=1;
+            else
+            score+=10;
+        }
+    }
     // judge collision
     if(near_dist > circle.r)
         return false
     else if(near_dist == 0){
+        in_empty = true;
         // at empty wall area
         // center - r >uh &&  center +r < uh+eh
         if(circle.y-circle.r > near_wal.uh && circle.y+circle.r < near_wal.uh+ near_wal.eh)
@@ -177,7 +207,7 @@ function isCollision() {
         a.push(new Vector2(base_point.x+near_wal.w,base_point.y));
         for(i in walls){
             var pd=getPointDistance(circle,a[i])
-            if(pd <circle.r)
+            if(pd <circle.r-1)
             {
                 console.log(pd)
                 return true;
@@ -188,7 +218,20 @@ function isCollision() {
 }
 
 function restart() { 
-    ;
+    walls.splice(0,wallsMaxLength);
+    eventFlag = false;
+    v_temp = new Vector2(0, 0);
+    circle = new Sprite(WindowWidth / 2, WindowHeight / 2, 30)
+    destination = new Vector2(circle.x, circle.y);
+    last_e = new Vector2();
+    sum_e = new Vector2();
+    Mode = false;
+    score = 0;
+    context.textAlign='start';
+    in_empty = false;
+    context.font = '30px sans-serif';
+    walls.push(new Wall());
+    walls[0].randomize();
 }
 
 function getPointDistance(point1,point2) { 
