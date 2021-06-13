@@ -17,7 +17,7 @@ var destination = new Vector2(circle.x, circle.y);
 var last_e = new Vector2();
 var sum_e = new Vector2();
 var Mode = false;
-var score = 0;
+var score = 200;
 var Death = false;
 var in_empty=false;
 var top_score=0;
@@ -129,7 +129,7 @@ function render() {
         var wal = walls[i];
         drawWall(WindowHeight, wal);
         // if(walls.length < wallsMaxLength)
-            wal.x -= wallSpeed+Math.round(score/200);
+            wal.x -= wallSpeed+Math.round(score/20)/10;
 
             if (wal.x < -wal.w) {
                 wal.randomize();
