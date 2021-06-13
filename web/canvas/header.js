@@ -8,8 +8,8 @@
 
 function Vector2(x, y) {
     this.name = 'Vector2'
-    this.x = x||0;
-    this.y = y||0;
+    this.x = x || 0;
+    this.y = y || 0;
     this.Length = function () {
         return cutFloatTo(Math.sqrt(this.x * this.x + this.y * this.y), 3)
     }
@@ -39,23 +39,23 @@ function Vector2(x, y) {
         if (obj.name = "Vector2") {
             this.x += obj.x
             this.y += obj.y
-            return new Vector2(this.x,this.y)
+            return new Vector2(this.x, this.y)
         }
     }
-    this.Multiply = function(num){
-        this.x *=num;
-        this.y *=num;
-        return new Vector2(this.x,this.y)
+    this.Multiply = function (num) {
+        this.x *= num;
+        this.y *= num;
+        return new Vector2(this.x, this.y)
     }
     this.isZero = function () {
         return this.Length() == 0
     }
-    this.Substract = function(obj){
+    this.Substract = function (obj) {
         if (obj.name = "Vector2") {
-            
+
             this.x -= obj.x
             this.y -= obj.y
-            return new Vector2(this.x,this.y)
+            return new Vector2(this.x, this.y)
         }
 
     }
@@ -75,21 +75,34 @@ function cutFloatTo(floa, base) {
 }
 
 
-function Sprite(px, py, r,vx, vy) {
+function Sprite(px, py, r, vx, vy) {
     this.x = px;
     this.y = py;
-    this.v = new Vector2(vx  || 0, vy || 0)
+    this.v = new Vector2(vx || 0, vy || 0)
     this.r = r;
 }
 
-function Wall(x,y,w,h){
+function Wall(x, uh, eh, w, tail) {
     this.x = x || 0;
-    this.y = y || 0;
+    this.uh = uh || 0;
+    this.eh = eh || 0;
     this.w = w || 0;
-    this.h = h || 0;
+    this.tail = tail || 0;
+}
+Wall.prototype.randomize = function(){
+    var winw=WindowWidth;
+    var winh=WindowHeight;
+    this.x=winw;
+    this.uh = Math.round(randomRange(winh*0.1,winh*0.7));
+    this.eh = Math.round(randomRange(100,160));
+    this.w = Math.round(randomRange(100,150));
+    this.tail = Math.round(randomRange(100,250));
+    // console.log(this)
 }
 
-
+function randomRange(min,max){
+    return min+Math.random()*(max-min)
+}
 
 function vToZreo(obj, friction) {
 
@@ -129,6 +142,15 @@ function getCord() {
     document.getElementById("Cord").innerHTML = "v:(" + x + ';' + y + ')' + circle.v.Length() + ' Accelerating:' + eventFlag;
 }
 
-function drawWall(obj){
-    context.fillRect(obj.x,obj.y,obj.w,obj.h);
+function drawWall(winHeight, obj) {
+    // Wall(uh,eh,w,tail)
+    var dh = winHeight - obj.uh - obj.eh;
+
+    context.fillRect(obj.x, 0, obj.w, obj.uh);
+    // context.fillStyle='red';
+    
+    // context.fillRect(obj.x, obj.up + obj.eh, obj.w, dh);
+    context.fillRect(obj.x, obj.uh+obj.eh, obj.w, dh);
+    // context.fillStyle='black';
+    
 }
