@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Clock</title>
+        <style>
+            button{
+                font-size: 4em;
+            }
+        </style>
+    </head>
+    <body onload="main()">
+        <canvas id="canvas" width="1280" height="720" style="border: 1px solid;"></canvas>
+        <button onclick="SetTime()">Start</button>
+        <button onclick="clearTime()">clear</button>
+        <script>
+            var canvas,context;
+            var s = 0;
+            var m = 0;
+            var h = 0;
+            var timer;
+            
+            function main(){
+                canvas = document.getElementById('canvas');
+                context = canvas.getContext('2d');
+                context.fillStyle='black';
+                context.font='200px sans-serif';
+            }
+                
+                function SetTime(){
+                    context.clearRect(0, 0, 1280, 720);
+                    context.fillText(h+":"+m+":"+s, 400, 400);
+                    timer = setInterval(time,1000);
+                }
+                function clearTime(){
+                    s=0;m=0;h=0;
+                    clearInterval(timer);
+                }
+                
+                function time(){
+                    s++;
+                    if(s>=60){
+                        s=0;
+                        m++;
+                        if(m>=60){
+                            m=0;
+                            h++;
+                        }
+                    }
+                    context.clearRect(0, 0, 1280, 720);
+                    
+                    context.fillText(h+":"+m+":"+s, 400, 400);
+                    
+                }
+                </script>
+                </body>
+                </html>
