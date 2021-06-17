@@ -32,6 +32,7 @@ function main() {
     // gl.vertexAttrib3f(a_Position, p[0], p[1], 0.0);
     // gl.vertexAttrib1f(a_PointSize, p[2]);
     // gl.uniform4fv(u_FragColor, p[3])
+    // p[3] is vec4;
     canvas.onmousedown = function (e) {
         // console.log(e);
         var x = e.offsetX;

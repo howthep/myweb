@@ -4,3 +4,6 @@ function cutFloatTo(floa,length){
         k*=10;
     return Math.round(floa*k)/k;
 }
+function randomRange(min,max){
+    return Math.random()*(max - min)+min ;
+}
