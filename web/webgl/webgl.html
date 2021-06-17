@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <style>
         * {
             box-sizing: border-box;
@@ -25,7 +26,6 @@
             margin-left: 10px;
         }
     </style>
-    <meta charset="UTF-8">
     <title>Webgl</title>
 </head>
 
@@ -40,14 +40,18 @@
         void main() {
                 gl_Position = a_Position;
                 gl_PointSize=a_PointSize;
-                // position is float, cant be assigned by 50
+                // position is float, CAN'T be assigned by 50
             } 
           </script>
     <!-- 片元着色器源码 -->
     <!-- vec4(x,y,z,w) = vec3(x/w,y/w,z/w) -->
     <script id="fragmentShader" type="x-shader/x-fragment">
+        precision mediump float;
+        // specify precision of float
+        uniform vec4 u_FragColor;
         void main() {
-              gl_FragColor = vec4(1.0,0.8,0.5,1.0);
+              gl_FragColor = u_FragColor;
+              //gl_FragColor = vec4(0.8,0.5,0.5,1);
             }
           </script>
     <!-- <script src="./lib.js"></script> -->

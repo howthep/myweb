@@ -18,32 +18,43 @@ function main() {
     }
     var a_Position = gl.getAttribLocation(gl.program, 'a_Position');
     var a_PointSize = gl.getAttribLocation(gl.program, 'a_PointSize');
-    // get location of attribute a_Position
-    if (a_Position < 0 && a_PointSize<0) {
+    // get location of attribute variation
+    var u_FragColor = gl.getUniformLocation(gl.program, "u_FragColor");
+    // get location of uniform variation
+
+    if (a_Position < 0 && a_PointSize < 0) {
         console.log("Failed to get a_Position or a_PointSize");
         return;
     }
     // gl.vertexAttrib3f(a_Position, 0, 0, 0);
     gl.vertexAttrib1f(a_PointSize, 10);
     // assign 
-    canvas.onmousedown = function(e){
+    canvas.onmousedown = function (e) {
         // console.log(e);
         var x = e.offsetX;
         var y = e.offsetY;
+        var size = cutFloatTo(Math.random() * 20 + 20);
+        var red = cutFloatTo(Math.random());
+        var green = cutFloatTo(Math.random());
+        var blue = cutFloatTo(Math.random());
+        var color = [red,green,blue,1.0];
         // console.log("("+x+":"+y+")");
-        var rect  = e.target.getBoundingClientRect();
+        var rect = e.target.getBoundingClientRect();
         // get border information of canvas;
-        x = cutFloatTo(x/rect.width*2 -1,3);
-        y = -cutFloatTo(y/rect.height*2 -1,3);
-        console.log("("+x+":"+y+")");
-        points.push(x);
-        points.push(y);
+        x = cutFloatTo(x / rect.width * 2 - 1, 3);
+        y = -cutFloatTo(y / rect.height * 2 - 1, 3);
+        // console.log("("+x+":"+y+")");
+        points.push([x, y, size, color]);
         gl.clear(gl.COLOR_BUFFER_BIT);
         var len = points.length;
-        for(var i =0;i<len;i+=2){
-            gl.vertexAttrib3f(a_Position, points[i], points[i+1], 0.0);
+        for (var i = 0; i < len; i++) {
+            var p = points[i];
+            gl.vertexAttrib3f(a_Position, p[0], p[1], 0.0);
+            gl.vertexAttrib1f(a_PointSize, p[2]);
+            gl.uniform4fv(u_FragColor, p[3])
             gl.drawArrays(gl.POINTS, 0, 1);
         }
+        console.log(points);
     }
     gl.clearColor(0, 0, 0, 1);
     gl.clear(gl.COLOR_BUFFER_BIT);
