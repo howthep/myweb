@@ -1,48 +1,58 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-            *{
-                box-sizing: border-box;
-            }
-            body{
-                margin:0;
-                padding: 0;
-            }
-            div{
-                padding-left: 8px;
-            }
-            q:lang(div){
-                quotes: "~~" "~~";
-            }
-            #switch{
-                font-size: 30px;
-                margin-left: 10px;
-            }
-        </style>
-        <meta charset="UTF-8">
-        <title>Webgl</title>
-    </head>
-    <body onload="main()" >
-        <canvas id="cvs" width="1280" height="720" style="border:1px solid" >not support</canvas>
-        <div id="Cord">
-            <p>KeyMode:use arrow key to control  </p>
-        </div>
-        <script id="vertexShader" type="x-shader/x-vertex">
-            void main() {
-              //给内置变量gl_PointSize赋值像素大小
-              gl_PointSize=50.0;
-              //顶点位置，位于坐标原点
-              gl_Position =vec4(0.0,0.0,0.0,1.0);
-            }
+
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            padding-left: 8px;
+        }
+
+        q:lang(div) {
+            quotes: "~~""~~";
+        }
+
+        #switch {
+            font-size: 30px;
+            margin-left: 10px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Webgl</title>
+</head>
+
+<body onload="main()">
+    <canvas id="cvs" width="1280" height="720" style="border:1px solid">not support</canvas>
+    <div id="Cord">
+        <p>KeyMode:use arrow key to control </p>
+    </div>
+    <script id="vertexShader" type="x-shader/x-vertex">
+        attribute vec4 a_Position;
+        void main() {
+                gl_Position = a_Position;
+                gl_PointSize=50.0;
+            } 
           </script>
-          <!-- 片元着色器源码 -->
-          <script id="fragmentShader" type="x-shader/x-fragment">
-            void main() {
+    <!-- 片元着色器源码 -->
+    <script id="fragmentShader" type="x-shader/x-fragment">
+        void main() {
               gl_FragColor = vec4(1.0,0.8,0.5,1.0);
             }
           </script>
-          <script src="./lib.js"></script>
-        <script src="./dot.js"></script>
-    </body>
+    <!-- <script src="./lib.js"></script> -->
+    <script src="./lib/cuon-matrix.js"></script>
+    <script src="./lib/webgl-utils.js"></script>
+    <script src="./lib/webgl-debug.js"></script>
+    <script src="./lib/cuon-utils.js"></script>
+    <script src="./dot.js"></script>
+</body>
+
 </html>

@@ -11,14 +11,25 @@ function main() {
     //片元着色器源码
     var fragShaderSource = document.getElementById('fragmentShader').innerText;
     //初始化着色器
-    if (!initShader(gl, vertexShaderSource, fragShaderSource)) {
+    // var program = initShader(gl, vertexShaderSource, fragShaderSource); 
+    // if (!program) {
+    //     console.log("Initiation Failed!");
+    //     return
+    // }
+    if (!initShaders(gl, vertexShaderSource, fragShaderSource)) {
         console.log("Initiation Failed!");
         return
     }
-
+    var a_Position = gl.getAttribLocation(gl.program, 'a_Position');
+    if (a_Position < 0) {
+        console.log("Failed to get a_Position");
+        return;
+    }
+    gl.vertexAttrib3f(a_Position, 0, 0, 0)
     gl.clearColor(0, 0, 0, 1);
     gl.clear(gl.COLOR_BUFFER_BIT);
     gl.drawArrays(gl.POINTS, 0, 1);
+    // gl.drawArrays(mode, first, count);
 
 }
 
