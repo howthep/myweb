@@ -8,7 +8,7 @@
         }
 
         body {
-            margin: 0;
+            margin: 10px;
             padding: 0;
         }
 
@@ -36,12 +36,15 @@
     </div>
     <script id="vertexShader" type="x-shader/x-vertex">
         attribute vec4 a_Position;
+        attribute float a_PointSize;
         void main() {
                 gl_Position = a_Position;
-                gl_PointSize=50.0;
+                gl_PointSize=a_PointSize;
+                // position is float, cant be assigned by 50
             } 
           </script>
     <!-- 片元着色器源码 -->
+    <!-- vec4(x,y,z,w) = vec3(x/w,y/w,z/w) -->
     <script id="fragmentShader" type="x-shader/x-fragment">
         void main() {
               gl_FragColor = vec4(1.0,0.8,0.5,1.0);
@@ -52,6 +55,7 @@
     <script src="./lib/webgl-utils.js"></script>
     <script src="./lib/webgl-debug.js"></script>
     <script src="./lib/cuon-utils.js"></script>
+    <script src="./head.js"></script>
     <script src="./dot.js"></script>
 </body>
 
