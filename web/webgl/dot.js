@@ -29,6 +29,9 @@ function main() {
     // gl.vertexAttrib3f(a_Position, 0, 0, 0);
     gl.vertexAttrib1f(a_PointSize, 10);
     // assign 
+    // gl.vertexAttrib3f(a_Position, p[0], p[1], 0.0);
+    // gl.vertexAttrib1f(a_PointSize, p[2]);
+    // gl.uniform4fv(u_FragColor, p[3])
     canvas.onmousedown = function (e) {
         // console.log(e);
         var x = e.offsetX;
@@ -54,7 +57,11 @@ function main() {
             gl.uniform4fv(u_FragColor, p[3])
             gl.drawArrays(gl.POINTS, 0, 1);
         }
-        console.log(points);
+        if(len>100){
+            console.log("ponits clear");
+            points.splice(0,1);
+        }
+        console.log(len);
     }
     gl.clearColor(0, 0, 0, 1);
     gl.clear(gl.COLOR_BUFFER_BIT);
