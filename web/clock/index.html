@@ -24,11 +24,14 @@
                 context = canvas.getContext('2d');
                 context.fillStyle='black';
                 context.font='200px sans-serif';
+                context.textAlign='center';
+                
             }
                 
                 function SetTime(){
                     context.clearRect(0, 0, 1280, 720);
-                    context.fillText(h+":"+m+":"+s, 400, 400);
+                    context.fillText(h+":"+m+":"+s, 640, 400);
+                    date();
                     timer = setInterval(time,1000);
                 }
                 function clearTime(){
@@ -48,8 +51,17 @@
                     }
                     context.clearRect(0, 0, 1280, 720);
                     
-                    context.fillText(h+":"+m+":"+s, 400, 400);
+                    context.fillText(h+":"+m+":"+s, 640, 400);
+                    date();
                     
+                }
+                function date(){
+                    context.font='50px sans-serif';
+                    var d = new Date().toString().slice(16,24);
+                    context.fillText(d, 100, 680);
+                    
+                    context.font='200px sans-serif';
+
                 }
                 </script>
                 </body>
