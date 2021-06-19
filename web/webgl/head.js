@@ -1,3 +1,6 @@
+//  head.js
+//  usually used function
+
 function cutFloatTo(floa,length){
     var k=1;
     for(var i =0;i<length;i++)

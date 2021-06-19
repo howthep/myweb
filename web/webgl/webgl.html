@@ -30,37 +30,47 @@
 </head>
 
 <body onload="main()">
-    <canvas id="cvs" width="1280" height="720" style="border:1px solid">not support</canvas>
+    <canvas id="cvs" width="1920" height="1080" style="border:1px solid">not support</canvas>
     <div id="Cord">
-        <p>KeyMode:use arrow key to control </p>
+        <p>Z axis is ponit to you</p>
     </div>
     <script id="vertexShader" type="x-shader/x-vertex">
         attribute vec4 a_Position;
         attribute float a_PointSize;
+        attribute vec4 a_Color;
+        varying vec4 v_Color;
+        //uniform mat4 u_matrix;// matrix type
         void main() {
-                gl_Position = a_Position;
-                gl_PointSize=a_PointSize;
-                // position is float, CAN'T be assigned by 50
-            } 
-          </script>
+            // gl_Position = u_matrix*a_Position; // multiple of matrix
+            gl_Position = a_Position; // multiple of matrix
+            //transform matrix should be ahead of vec4
+            gl_PointSize=a_PointSize;
+            // position is float, CAN'T be assigned by 50
+            v_Color = a_Color;
+        } 
+    </script>
     <!-- 片元着色器源码 -->
     <!-- vec4(x,y,z,w) = vec3(x/w,y/w,z/w) -->
     <script id="fragmentShader" type="x-shader/x-fragment">
         precision mediump float;
+        varying vec4 v_Color;
         // specify precision of float
-        uniform vec4 u_FragColor;
+        //uniform vec4 u_FragColor;
         void main() {
-              gl_FragColor = u_FragColor;
+              gl_FragColor = v_Color;
               //gl_FragColor = vec4(0.8,0.5,0.5,1);
             }
           </script>
     <!-- <script src="./lib.js"></script> -->
-    <script src="./lib/cuon-matrix.js"></script>
     <script src="./lib/webgl-utils.js"></script>
     <script src="./lib/webgl-debug.js"></script>
     <script src="./lib/cuon-utils.js"></script>
+    <script src="./lib/cuon-matrix.js"></script>
     <script src="./head.js"></script>
-    <script src="./dot.js"></script>
+    <!-- <script src="./dot.js"></script> -->
+    <!-- <script src="./triangle.js"></script> -->
+    <!-- <script src="./matrixTransform.js"></script> -->
+    <script src="./interleaved.js"></script>
 </body>
 
 </html>
